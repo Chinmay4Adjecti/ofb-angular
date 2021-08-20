@@ -9,16 +9,17 @@ import { Router } from '@angular/router';
 })
 export class FormComponent implements OnInit {
 
-  constructor(private ofb:OfbService,) { }
+  constructor(private ofb:OfbService,private route:Router) { }
 
   onSubmit(designationClass:DesignationClass){
-    alert(designationClass.name)
     this.ofb.saveData(designationClass).subscribe(data=>{
     })
+    this.route.navigate(['list']);
   }
   
 
   ngOnInit(): void {
   }
+
 
 }

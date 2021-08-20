@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DesignationClass } from 'src/app/designationClass';
+import { Router } from '@angular/router';
+import { DesignationClass } from 'src/app/designationClass'; 
+
+
 import { OfbService } from 'src/app/ofb.service'; 
 @Component({
   selector: 'app-table',
@@ -7,17 +10,22 @@ import { OfbService } from 'src/app/ofb.service';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  data:DesignationClass[]; 
+  data?:DesignationClass[]; 
 
-  constructor(private ofb:OfbService) { 
+  constructor(private ofb:OfbService,private route:Router) { 
       this.ofb.getAllData().subscribe((data:DesignationClass[]) =>{
       this.data=data;
     })
-  
   }
+updateData(){
+  this.route.navigate(['list']);
+}
+deleteData(){
+  alert()
+}
 
   ngOnInit(): void {
   }
-  
+
 
 }

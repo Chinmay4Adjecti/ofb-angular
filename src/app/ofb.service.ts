@@ -9,14 +9,20 @@ import { DesignationClass } from './designationClass';
 export class OfbService {
 
   constructor(private http:HttpClient) {}
+  
   getAllData(){
     let url="http://localhost:8080/designationclass/list"
-    return this.http.get(url);
+    return this.http.get<DesignationClass[]>(url);
   }
   saveData(data:DesignationClass){
     let url="http://localhost:8080/designationclass/create"
     return this.http.post(url,data);
   }
-  updateData(){}
-  deleteData(){}
+  updateData(data:DesignationClass){
+    let url="http://localhost:8080/designationclass/update"
+    return this.http.put(url,data);
+  }
+  deleteData(){
+   
+  }
 }

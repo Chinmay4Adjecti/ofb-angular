@@ -13,13 +13,15 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of data">
+        <ng-container *ngIf="item.deleted==false">
         <th scope="row">{{item.id}}</th>
         <td>{{item.name}}</td>
         <td>{{item.code}}</td>
         <td>{{item.description}}</td>
         <td>{{item.status}}</td>
-        <td><a class="btn btn-warning">Edit</a></td>
-        <td><a class="btn btn-danger ">Delete</a></td>
+        <td><button class="btn btn-warning" (click)="updateData()">Edit</button></td>
+        <td><button class="btn btn-danger" (click)="deleteData()">Delete</button></td>
+      </ng-container>
       </tr>
     </tbody>
     <footer>

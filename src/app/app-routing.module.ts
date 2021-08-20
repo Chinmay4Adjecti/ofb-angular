@@ -8,10 +8,17 @@ const routes: Routes = [
     component:TableComponent
   },
   {
-    path:"add",
+    path:"create",
     component:FormComponent
   },
- 
+  {
+    path:"update/{id}",
+    component:FormComponent
+  },
+  {
+    path:"delete/{id}",
+    component:FormComponent
+  },
 ];
 
 @NgModule({
