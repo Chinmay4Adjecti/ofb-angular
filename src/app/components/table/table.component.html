@@ -19,8 +19,8 @@
         <td>{{item.code}}</td>
         <td>{{item.description}}</td>
         <td>{{item.status}}</td>
-        <td><button class="btn btn-warning" (click)="updateData()">Edit</button></td>
-        <td><button class="btn btn-danger" (click)="deleteData()">Delete</button></td>
+        <td><button class="btn btn-warning" (click)="updateData(item)">Edit</button></td>
+        <td><button class="btn btn-danger" (click)="deleteData(item)">Delete</button></td>
       </ng-container>
       </tr>
     </tbody>

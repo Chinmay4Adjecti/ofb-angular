@@ -17,11 +17,11 @@ export class TableComponent implements OnInit {
       this.data=data;
     })
   }
-updateData(){
+updateData(item:any){
   this.route.navigate(['list']);
 }
-deleteData(){
-  alert()
+deleteData(item:DesignationClass){
+  alert(item.id);
 }
 
   ngOnInit(): void {
