@@ -17,11 +17,15 @@ export class TableComponent implements OnInit {
       this.data=data;
     })
   }
-updateData(item:any){
+updateData(designationClass:DesignationClass){
+  alert(designationClass.name)
   this.route.navigate(['list']);
 }
 deleteData(item:DesignationClass){
-  alert(item.id);
+  let a=prompt("Please Type 'Confirm' if you want to delete")
+  if(a=='Confirm'){
+      alert(item.id+" Deleteed Successfully");
+  }
 }
 
   ngOnInit(): void {
