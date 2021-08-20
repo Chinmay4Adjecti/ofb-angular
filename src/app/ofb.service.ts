@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http'
 import { getLocaleDateFormat } from '@angular/common';
+import { DesignationClass } from './designationClass';
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +13,10 @@ export class OfbService {
     let url="http://localhost:8080/designationclass/list"
     return this.http.get(url);
   }
-
+  saveData(data:DesignationClass){
+    let url="http://localhost:8080/designationclass/create"
+    return this.http.post(url,data);
+  }
+  updateData(){}
+  deleteData(){}
 }

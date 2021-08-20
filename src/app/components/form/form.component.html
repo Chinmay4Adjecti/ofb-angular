@@ -1,23 +1,23 @@
-<div class="d-flex justify-content-center">
-<form>
+<div class="container">
+<form #designationClassForm="ngForm" (ngSubmit)="onSubmit(designationClassForm.value)">
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="designationclass_name">Name</label>
-        <input type="text" class="form-control" id="designationclass_name" placeholder="Enter Name">
+        <label>Name</label>
+        <input type="text" class="form-control" ngModel  placeholder="Enter Name" name="name">
       </div>
       <div class="form-group col-md-6">
-        <label for="designationclass_description">Description</label>
-        <textarea class="form-control" id="designationclass_description" rows="3" placeholder="Enter Description"></textarea>
+        <label>Description</label>
+        <textarea class="form-control"  ngModel rows="3" placeholder="Enter Description" name="description"></textarea>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="designationclass_code">Code</label>
-        <input type="text" class="form-control" id="designationclass_code" placeholder="Enter Code">
+        <label>Code</label>
+        <input type="text" class="form-control"  ngModel placeholder="Enter Code" name="code">
       </div>
       <div class="form-group col-md-2">
-        <label for="designationclass_status">Status</label>
-        <input type="text" class="form-control" id="designationclass_status" placeholder="Enter Status">
+        <label>Status</label>
+        <input type="number" class="form-control"   ngModel placeholder="Enter Status" name="status">
       </div>
     </div>
     <div class="form-group">

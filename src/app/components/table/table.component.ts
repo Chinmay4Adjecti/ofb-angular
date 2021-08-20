@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DesignationClass } from 'src/app/designationClass';
 import { OfbService } from 'src/app/ofb.service'; 
 @Component({
   selector: 'app-table',
@@ -6,12 +7,10 @@ import { OfbService } from 'src/app/ofb.service';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  data:any; 
+  data:DesignationClass[]; 
 
   constructor(private ofb:OfbService) { 
-      this.ofb.getAllData().subscribe(data=>{
-      
-        console.warn(data);
+      this.ofb.getAllData().subscribe((data:DesignationClass[]) =>{
       this.data=data;
     })
   

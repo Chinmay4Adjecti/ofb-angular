@@ -9,7 +9,7 @@ import { SideNavBarComponent } from './components/side-nav-bar/side-nav-bar.comp
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormComponent } from './components/form/form.component';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +24,8 @@ import { FormComponent } from './components/form/form.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
