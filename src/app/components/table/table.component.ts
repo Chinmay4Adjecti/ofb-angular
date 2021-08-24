@@ -19,6 +19,7 @@ export class TableComponent implements OnInit {
   }
 updateData(designationClass:DesignationClass){
   this.route.navigate(['update']);
+  
 
 }
 

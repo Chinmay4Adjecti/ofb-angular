@@ -9,7 +9,6 @@
         <th scope="col">status</th>
         <th></th>
         <th></th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -20,7 +19,6 @@
         <td>{{item.code}}</td>
         <td>{{item.description}}</td>
         <td>{{item.status}}</td>
-        <td>{{item.deleted}}</td>
         <td><button class="btn btn-warning" (click)="updateData(item)">Edit</button></td>
         <td><button class="btn btn-danger" (click)="deleteData(item,i)">Delete</button></td>
       </ng-container>

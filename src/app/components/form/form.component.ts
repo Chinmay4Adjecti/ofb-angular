@@ -13,8 +13,9 @@ export class FormComponent implements OnInit {
 
   onSubmit(designationClass:DesignationClass){
     this.ofb.saveData(designationClass).subscribe(data=>{
+      this.route.navigate(['list']);
     })
-    this.route.navigate(['list']);
+    
   }
   setDataOnForm(){
     
