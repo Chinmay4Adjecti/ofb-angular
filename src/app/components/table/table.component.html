@@ -9,23 +9,21 @@
         <th scope="col">status</th>
         <th></th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of data">
+      <tr *ngFor="let item of data; let i = index">
         <ng-container *ngIf="item.deleted==false">
         <th scope="row">{{item.id}}</th>
         <td>{{item.name}}</td>
         <td>{{item.code}}</td>
         <td>{{item.description}}</td>
         <td>{{item.status}}</td>
+        <td>{{item.deleted}}</td>
         <td><button class="btn btn-warning" (click)="updateData(item)">Edit</button></td>
-        <td><button class="btn btn-danger" (click)="deleteData(item)">Delete</button></td>
+        <td><button class="btn btn-danger" (click)="deleteData(item,i)">Delete</button></td>
       </ng-container>
       </tr>
     </tbody>
-    <footer>
-      <td> </td>
-      
-    </footer>
-  </table>
+  </table>  

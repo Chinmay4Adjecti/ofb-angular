@@ -22,7 +22,8 @@ export class OfbService {
     let url="http://localhost:8080/designationclass/update"
     return this.http.put(url,data);
   }
-  deleteData(){
-   
+  deleteData(id:any){
+    let url="http://localhost:8080/designationclass/delete/"+id;
+    return this.http.delete(url);
   }
 }

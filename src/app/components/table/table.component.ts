@@ -10,7 +10,7 @@ import { OfbService } from 'src/app/ofb.service';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  data?:DesignationClass[]; 
+  data:DesignationClass[]=[]; 
 
   constructor(private ofb:OfbService,private route:Router) { 
       this.ofb.getAllData().subscribe((data:DesignationClass[]) =>{
@@ -18,13 +18,17 @@ export class TableComponent implements OnInit {
     })
   }
 updateData(designationClass:DesignationClass){
-  alert(designationClass.name)
-  this.route.navigate(['list']);
+  this.route.navigate(['update']);
+
 }
-deleteData(item:DesignationClass){
+
+deleteData(item:DesignationClass,i:any){
   let a=prompt("Please Type 'Confirm' if you want to delete")
   if(a=='Confirm'){
-      alert(item.id+" Deleteed Successfully");
+      this.ofb.deleteData(item.id).subscribe(result=>{
+        this.data.splice(i,1);
+      });
+      
   }
 }
 
@@ -33,3 +37,4 @@ deleteData(item:DesignationClass){
 
 
 }
+

@@ -12,13 +12,10 @@ const routes: Routes = [
     component:FormComponent
   },
   {
-    path:"update/{id}",
+    path:"update",
     component:FormComponent
   },
-  {
-    path:"delete/{id}",
-    component:FormComponent
-  },
+ 
 ];
 
 @NgModule({
